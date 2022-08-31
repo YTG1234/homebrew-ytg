@@ -14,7 +14,7 @@ class QalculateQt < Formula
 
   def install
     system "qmake", "PREFIX=#{prefix}", "CONFIG-=app_bundle"
-    system "make"
+    system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}"
     system "make", "install"
   end
 
